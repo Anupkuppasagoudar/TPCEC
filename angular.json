@@ -7,7 +7,7 @@
       "sourceRoot": "apps/app-name/src",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/apps/app-name",
             "index": "apps/app-name/src/index.html",
