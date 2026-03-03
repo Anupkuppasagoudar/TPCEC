@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-floating-popup',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './floating-popup.component.html',
   styleUrl: './floating-popup.component.css'
