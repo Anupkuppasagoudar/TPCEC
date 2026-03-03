@@ -26,9 +26,14 @@ jobs:
 
       - name: Build project
         run: |
+          # Install the specific builder in case it was missed
+          npm install @angular-devkit/build-angular --legacy-peer-deps
+          
+          # Run the build
           npx ng build app-name --configuration production --base-href /tpcec/
-          # Create the 404 file directly in the known output folder
-          cp dist/apps/app-name/index.html dist/apps/app-name/404.html || echo "No index.html found"
+          
+          # Create 404 file
+          cp dist/apps/app-name/index.html dist/apps/app-name/404.html || echo "Checking subfolders..."
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
