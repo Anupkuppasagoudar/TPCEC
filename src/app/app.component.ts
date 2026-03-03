@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-// Import the specific icons your HTML is looking for
 import { 
   faInstagram, 
   faFacebook, 
@@ -10,11 +9,11 @@ import {
   faLinkedin 
 } from '@fortawesome/free-brands-svg-icons';
 import { faMapMarkerAlt, faStore } from '@fortawesome/free-solid-svg-icons';
-import { FloatingPopupComponent } from './floating-popup/floating-popup.component';
+import { FloatingPopupComponent } from '../floating-popup/floating-popup.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // This is key for Angular 19
+  standalone: true, 
   imports: [
     CommonModule, 
     FontAwesomeModule,
@@ -26,7 +25,6 @@ import { FloatingPopupComponent } from './floating-popup/floating-popup.componen
 export class AppComponent {
   title = 'tpcec';
 
-  // Define these so [icon]="faInstagram" in your HTML works
   faInstagram = faInstagram;
   faFacebook = faFacebook;
   faWhatsapp = faWhatsapp;

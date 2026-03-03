@@ -12,17 +12,18 @@
     "@angular/platform-browser": "latest",
     "@angular/platform-browser-dynamic": "latest",
     "@angular/router": "latest",
-    "rxjs": "latest",
-    "zone.js": "latest",
     "@fortawesome/angular-fontawesome": "latest",
     "@fortawesome/fontawesome-svg-core": "latest",
     "@fortawesome/free-brands-svg-icons": "latest",
-    "@fortawesome/free-solid-svg-icons": "latest"
+    "@fortawesome/free-solid-svg-icons": "latest",
+    "rxjs": "latest",
+    "tslib": "^2.8.1",
+    "zone.js": "latest"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "latest",
     "@angular/cli": "latest",
     "@angular/compiler-cli": "latest",
-    "@angular-devkit/build-angular": "latest",
     "typescript": "latest"
   }
 }
