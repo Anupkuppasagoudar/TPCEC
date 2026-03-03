@@ -7,39 +7,23 @@
       "sourceRoot": "apps/app-name/src",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/apps/app-name",
             "index": "apps/app-name/src/index.html",
-            "main": "apps/app-name/src/main.ts",
-            "polyfills": "apps/app-name/src/polyfills.ts",
+            "browser": "apps/app-name/src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "apps/app-name/tsconfig.app.json",
-            "assets": [
-              "apps/app-name/src/favicon.ico",
-              "apps/app-name/src/assets"
-            ],
-            "styles": [
-              "apps/app-name/src/styles.css"
-            ],
+            "assets": ["apps/app-name/src/favicon.ico", "apps/app-name/src/assets"],
+            "styles": ["apps/app-name/src/styles.css"],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/app-name/src/environments/environment.ts",
-                  "with": "apps/app-name/src/environments/environment.prod.ts"
-                }
-              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "aot": true
             }
           }
         }
