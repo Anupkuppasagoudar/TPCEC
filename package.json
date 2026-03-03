@@ -1,1 +1,27 @@
-{\n  \"name\": \"tpcec\",\n  \"version\": \"1.0.0\",\n  \"scripts\": {\n    \"ng\": \"ng\",\n    \"build\": \"ng build\",\n    \"serve\": \"ng serve\",\n    \"test\": \"ng test\",\n    \"lint\": \"ng lint\",\n    \"e2e\": \"ng e2e\"\n  },\n  \"private\": true,\n  \"dependencies\": {\n    \"@angular/core\": \"^19.0.0\",\n    \"@angular/common\": \"^19.0.0\",\n    \"@angular/compiler\": \"^19.0.0\",\n    \"@angular/platform-browser\": \"^19.0.0\",\n    \"@angular/platform-browser-dynamic\": \"^19.0.0\",\n    \"@angular/router\": \"^19.0.0\",\n    \"rxjs\": \"^7.0.0\",\n    \"zone.js\": \"^0.12.0\"\n  },\n  \"devDependencies\": {\n    \"@angular/cli\": \"^19.0.0\",\n    \"@angular/compiler-cli\": \"^19.0.0\"\n  }\n}
+{
+  "name": "tpcec",
+  "version": "1.0.0",
+  "scripts": {
+    "ng": "ng",
+    "build": "ng build",
+    "serve": "ng serve",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/core": "^19.0.0",
+    "@angular/common": "^19.0.0",
+    "@angular/compiler": "^19.0.0",
+    "@angular/platform-browser": "^19.0.0",
+    "@angular/platform-browser-dynamic": "^19.0.0",
+    "@angular/router": "^19.0.0",
+    "rxjs": "^7.0.0",
+    "zone.js": "^0.12.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^19.0.0",
+    "@angular/compiler-cli": "^19.0.0"
+  }
+}
