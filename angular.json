@@ -1,1 +1,49 @@
-{\n  "version": 1,\n  "projects": {\n    "app-name": {\n      "projectType": "application",\n      "root": "apps/app-name",\n      "sourceRoot": "apps/app-name/src",\n      "architect": {\n        "build": {\n          "builder": "@angular-devkit/build-angular:browser",\n          "options": {\n            "outputPath": "dist/apps/app-name",\n            "index": "apps/app-name/src/index.html",\n            "main": "apps/app-name/src/main.ts",\n            "polyfills": "apps/app-name/src/polyfills.ts",\n            "tsConfig": "apps/app-name/tsconfig.app.json",\n            "assets": [\n              "apps/app-name/src/favicon.ico",\n              "apps/app-name/src/assets"\n            ],\n            "styles": [\n              "apps/app-name/src/styles.css"\n            ],\n            "scripts": []\n          },\n          "configurations": {\n            "production": {\n              "fileReplacements": [\n                {\n                  "replace": "apps/app-name/src/environments/environment.ts",\n                  "with": "apps/app-name/src/environments/environment.prod.ts"\n                }\n              ],\n              "optimization": true,\n              "outputHashing": "all",\n              "sourceMap": false,\n              "extractCss": true,\n              "namedChunks": false,\n              "aot": true,\n              "extractLicenses": true,\n              "vendorChunk": false,\n              "buildOptimizer": true\n            }\n          }\n        }\n      }\n    }\n  }\n}
+{
+  "version": 1,
+  "projects": {
+    "app-name": {
+      "projectType": "application",
+      "root": "apps/app-name",
+      "sourceRoot": "apps/app-name/src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/app-name",
+            "index": "apps/app-name/src/index.html",
+            "main": "apps/app-name/src/main.ts",
+            "polyfills": "apps/app-name/src/polyfills.ts",
+            "tsConfig": "apps/app-name/tsconfig.app.json",
+            "assets": [
+              "apps/app-name/src/favicon.ico",
+              "apps/app-name/src/assets"
+            ],
+            "styles": [
+              "apps/app-name/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/app-name/src/environments/environment.ts",
+                  "with": "apps/app-name/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
