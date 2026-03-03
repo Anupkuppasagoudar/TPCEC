@@ -5,14 +5,14 @@
     "ng": "ng",
     "build": "ng build"
   },
-  "dependencies": {
+ "dependencies": {
     "@angular/core": "^19.0.0",
     "@angular/common": "^19.0.0",
     "@angular/compiler": "^19.0.0",
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
-    "rxjs": "^7.0.0",
+    "rxjs": "^7.8.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
