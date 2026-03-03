@@ -15,7 +15,7 @@
     "rxjs": "latest",
     "zone.js": "latest"
   },
- "devDependencies": {
+  "devDependencies": {
     "@angular/cli": "latest",
     "@angular/compiler-cli": "latest",
     "@angular-devkit/build-angular": "latest",
