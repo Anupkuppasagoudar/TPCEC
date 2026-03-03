@@ -26,27 +26,32 @@ jobs:
 
       - name: Build project
         run: |
-          # Install the specific builder in case it was missed
+          # Force the builder to be present
           npm install @angular-devkit/build-angular --legacy-peer-deps
           
           # Run the build
           npx ng build app-name --configuration production --base-href /tpcec/
           
-          # Create 404 file
-          cp dist/apps/app-name/index.html dist/apps/app-name/404.html || echo "Checking subfolders..."
+          # AUTO-DETECT PATH: Check if files are in /browser or the root dist
+          if [ -d "dist/apps/app-name/browser" ]; then
+            cp dist/apps/app-name/browser/index.html dist/apps/app-name/browser/404.html
+            echo "DEPLOY_PATH=dist/apps/app-name/browser" >> $GITHUB_ENV
+          else
+            cp dist/apps/app-name/index.html dist/apps/app-name/404.html || echo "File not found"
+            echo "DEPLOY_PATH=dist/apps/app-name" >> $GITHUB_ENV
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Using the direct path from your angular.json
-          path: dist/apps/app-name
+          # This uses the path detected in the build step
+          path: ${{ env.DEPLOY_PATH }}
 
   deploy:
     needs: build-and-deploy
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
