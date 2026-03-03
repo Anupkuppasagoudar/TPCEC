@@ -20,17 +20,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      # --- THIS IS WHERE YOUR SNIPPET GOES ---
       - name: Build project
         run: |
           npx ng build app-name --configuration production --base-href /tpcec/
           cp dist/apps/app-name/index.html dist/apps/app-name/404.html
-      # ---------------------------------------
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
