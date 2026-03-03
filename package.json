@@ -5,18 +5,19 @@
     "ng": "ng",
     "build": "ng build"
   },
- "dependencies": {
-    "@angular/core": "^19.0.0",
-    "@angular/common": "^19.0.0",
-    "@angular/compiler": "^19.0.0",
-    "@angular/platform-browser": "^19.0.0",
-    "@angular/platform-browser-dynamic": "^19.0.0",
-    "@angular/router": "^19.0.0",
-    "rxjs": "^7.8.0",
-    "zone.js": "~0.15.0"
+  "dependencies": {
+    "@angular/common": "latest",
+    "@angular/compiler": "latest",
+    "@angular/core": "latest",
+    "@angular/platform-browser": "latest",
+    "@angular/platform-browser-dynamic": "latest",
+    "@angular/router": "latest",
+    "rxjs": "latest",
+    "zone.js": "latest"
   },
   "devDependencies": {
-    "@angular/cli": "^19.0.0",
-    "@angular/compiler-cli": "^19.0.0"
+    "@angular/cli": "latest",
+    "@angular/compiler-cli": "latest",
+    "typescript": "latest"
   }
 }
