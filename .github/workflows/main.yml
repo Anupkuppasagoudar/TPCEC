@@ -26,13 +26,13 @@ jobs:
 
       - name: Build project
         run: |
-          # Force the builder to be present
-          npm install @angular-devkit/build-angular --legacy-peer-deps
+          # 1. Force install the exact builder package locally
+          npm install @angular-devkit/build-angular --save-dev --legacy-peer-deps
           
-          # Run the build
+          # 2. Build the project
           npx ng build app-name --configuration production --base-href /tpcec/
           
-          # AUTO-DETECT PATH: Check if files are in /browser or the root dist
+          # 3. Handle 404 and Path detection
           if [ -d "dist/apps/app-name/browser" ]; then
             cp dist/apps/app-name/browser/index.html dist/apps/app-name/browser/404.html
             echo "DEPLOY_PATH=dist/apps/app-name/browser" >> $GITHUB_ENV
