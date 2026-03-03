@@ -10,6 +10,7 @@ import {
   faLinkedin 
 } from '@fortawesome/free-brands-svg-icons';
 import { faMapMarkerAlt, faStore } from '@fortawesome/free-solid-svg-icons';
+import { FloatingPopupComponent } from './floating-popup/floating-popup.component';
 
 @Component({
   selector: 'app-root',
