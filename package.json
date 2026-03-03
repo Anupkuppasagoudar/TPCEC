@@ -13,7 +13,11 @@
     "@angular/platform-browser-dynamic": "latest",
     "@angular/router": "latest",
     "rxjs": "latest",
-    "zone.js": "latest"
+    "zone.js": "latest",
+    "@fortawesome/angular-fontawesome": "latest",
+    "@fortawesome/fontawesome-svg-core": "latest",
+    "@fortawesome/free-brands-svg-icons": "latest",
+    "@fortawesome/free-solid-svg-icons": "latest"
   },
   "devDependencies": {
     "@angular/cli": "latest",
