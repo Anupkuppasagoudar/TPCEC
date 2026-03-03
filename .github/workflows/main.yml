@@ -27,21 +27,25 @@ jobs:
       - name: Build project
         run: |
           npm install @angular-devkit/build-angular --save-dev --legacy-peer-deps
+          # Run build - Note: Ensure 'app-name' matches your project name in angular.json
           npx ng build app-name --configuration production --base-href /tpcec/
           
-          # Check if Angular put it in /browser (standard for Angular 19)
+          # FLATTEN FOLDER LOGIC:
+          # If /browser exists, move its contents to the root of dist/tpcec
           if [ -d "dist/tpcec/browser" ]; then
-            cp dist/tpcec/browser/index.html dist/tpcec/browser/404.html
-            echo "DEPLOY_PATH=dist/tpcec/browser" >> $GITHUB_ENV
-          else
-            cp dist/tpcec/index.html dist/tpcec/404.html || echo "Path check..."
-            echo "DEPLOY_PATH=dist/tpcec" >> $GITHUB_ENV
+            echo "Angular 19 output detected. Flattening /browser folder..."
+            mv dist/tpcec/browser/* dist/tpcec/
+            rmdir dist/tpcec/browser
           fi
-
+          
+          # Create 404 fallback for Angular Routing
+          cp dist/tpcec/index.html dist/tpcec/404.html
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.DEPLOY_PATH }}
+          # Always upload the root of the dist folder
+          path: dist/tpcec
   deploy:
     needs: build-and-deploy
     runs-on: ubuntu-latest
