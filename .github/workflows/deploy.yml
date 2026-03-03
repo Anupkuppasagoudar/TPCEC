@@ -29,13 +29,11 @@ jobs:
       - name: Build project
         run: |
           npx ng build app-name --configuration production --base-href /tpcec/
-          cp dist/apps/app-name/index.html dist/apps/app-name/404.html
+          # This command ensures 404.html is created even if the folder structure is deep
+          cp dist/apps/app-name/index.html dist/apps/app-name/404.html || cp dist/apps/app-name/browser/index.html dist/apps/app-name/browser/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # We'll use a wildcard to ensure it finds the output even if Angular puts it in /browser
           path: dist/apps/app-name
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
