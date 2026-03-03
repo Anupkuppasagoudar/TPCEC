@@ -16,8 +16,8 @@ import { faMapMarkerAlt, faStore } from '@fortawesome/free-solid-svg-icons';
   standalone: true, // This is key for Angular 19
   imports: [
     CommonModule, 
-    FontAwesomeModule
-    /* If you have a FloatingPopupComponent, import and add it here too */
+    FontAwesomeModule,
+    FloatingPopupComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
